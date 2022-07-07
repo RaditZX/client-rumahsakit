@@ -6,7 +6,7 @@ import "../App.css";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import jsPDF from 'jspdf';
-import CurrencyFormat from 'react-currency-format';
+import currencyFormatter from 'currency-formatter';
 
 
 //import react boostrap
