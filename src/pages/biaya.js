@@ -4,7 +4,6 @@ import { useHistory,useParams, Link,Redirect,useLocation} from 'react-router-dom
 import Navbar from "../compenents/navbar";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import CurrencyFormat from 'react-currency-format';
 import { confirmAlert } from 'react-confirm-alert';
 
 //import react boostrap
@@ -223,7 +222,7 @@ function Biaya(){
                                                 <tr key={index}>
                                                     <td>{index+1}</td>
                                                     <td>{item.nama_biaya}</td>
-                                                    <td><CurrencyFormat value={item.harga} displayType={'text'} thousandSeparator={true} prefix={'Rp.'}/></td>
+                                                    <td>{item.harga}</td>
                                                     <td className='deskripsi'>{item.deskripsi}</td>
                                                     {role === 'admin' &&
                                                     <td>

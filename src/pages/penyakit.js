@@ -16,7 +16,7 @@ import {Pagination} from 'react-bootstrap';
 //import react-icons
 import * as BsIcons from 'react-icons/bs';
 import * as MdIcons from 'react-icons/md';
-import CurrencyFormat from 'react-currency-format';
+
 
 function Penyakit(){
     const [penyakit,setPenyakit] = useState([]);
@@ -233,7 +233,7 @@ function Penyakit(){
                                                         <td>{list.nama_penyakit}</td>
                                                         <td className='deskripsi'>{list.deskripsi}</td>
                                                         <td>{list.obat}</td>
-                                                        <td><CurrencyFormat value={list.harga_obat} displayType={'text'} thousandSeparator={true} prefix={'Rp.'}/></td>
+                                                        <td>{list.harga_obat}</td>
                                                         {role === 'admin' &&
                                                         <td>
                                                             <div className="d-flex justify-content-center">

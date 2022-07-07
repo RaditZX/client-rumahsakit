@@ -4,7 +4,6 @@ import { useHistory,useParams, Link,Redirect,useLocation } from 'react-router-do
 import Navbar from "../compenents/navbar";
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
-import CurrencyFormat from 'react-currency-format';
 import { confirmAlert } from 'react-confirm-alert';
 import '../App.css';
 
@@ -227,7 +226,7 @@ function Kamar(){
                                                     <td>{index+1}</td>
                                                     <td>{kamar.nama_kamar}</td>
                                                     <td>{kamar.lantai}</td>
-                                                    <td><CurrencyFormat value={kamar.harga} displayType={'text'} thousandSeparator={true} prefix={'Rp.'}/></td>
+                                                    <td>{kamar.harga}</td>
                                                     <td>{kamar.status}</td>
                                                     <td className='deskripsi'>{kamar.deskripsi}</td>
                                                     {role === 'admin' &&
