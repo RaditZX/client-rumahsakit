@@ -1,1 +1,1 @@
-web:set port=4000 &&react-scripts build
+web:node app.js

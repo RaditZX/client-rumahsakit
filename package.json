@@ -26,7 +26,7 @@
     "build": "set port=4000 &&react-scripts build",
     "test": "set port=4000 &&react-scripts test",
     "eject": "set port=4000 &&react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "postinstall": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
