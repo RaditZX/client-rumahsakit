@@ -10,7 +10,6 @@
     "currency-formatter": "^1.5.9",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.24",
-    "node-sass": "^7.0.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-confirm-alert": "^3.0.2",
@@ -20,15 +19,14 @@
     "react-router-dom": "^5.3.3",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.0.2",
-    "sass-loader": "^13.0.0",
-    "transporter": "^0.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "set port=4000 &&react-scripts start",
     "build": "set port=4000 &&react-scripts build",
     "test": "set port=4000 &&react-scripts test",
-    "eject": "set port=4000 &&react-scripts eject"
+    "eject": "set port=4000 &&react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [

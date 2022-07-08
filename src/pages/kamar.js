@@ -4,6 +4,7 @@ import { useHistory,useParams, Link,Redirect,useLocation } from 'react-router-do
 import Navbar from "../compenents/navbar";
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
+import currencyFormatter from 'currency-formatter';
 import { confirmAlert } from 'react-confirm-alert';
 import '../App.css';
 
@@ -193,7 +194,6 @@ function Kamar(){
                         </div>
                         
                         {/* tabel data kamar */}
-                        <div className="d-flex justify-content-center">
                             <div class="table-responsive">
                             <Table class="table align-middle mb-0 bg-white">
                                 <thead class="bg-light">
@@ -226,7 +226,7 @@ function Kamar(){
                                                     <td>{index+1}</td>
                                                     <td>{kamar.nama_kamar}</td>
                                                     <td>{kamar.lantai}</td>
-                                                    <td>{kamar.harga}</td>
+                                                    <td>{currencyFormatter.format(kamar.harga,{code: 'IDR'})}</td>
                                                     <td>{kamar.status}</td>
                                                     <td className='deskripsi'>{kamar.deskripsi}</td>
                                                     {role === 'admin' &&
@@ -271,7 +271,6 @@ function Kamar(){
                         </div>
     
                 </div>
-            </div>
         )
     }
 

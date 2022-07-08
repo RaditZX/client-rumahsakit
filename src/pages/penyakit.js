@@ -5,6 +5,7 @@ import Navbar from "../compenents/navbar";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import { confirmAlert } from 'react-confirm-alert';
+import currencyFormatter from 'currency-formatter';
 
 //import react boostrap
 import {Card} from 'react-bootstrap';
@@ -196,7 +197,6 @@ function Penyakit(){
                         </div>
 
                             {/* tabel data penyakit */}
-                            <div className="d-flex justify-content-center">
                                 <div class="table-responsive">
                                 <Table class="table align-middle mb-0 bg-white">
                                     <thead class="bg-light">
@@ -233,7 +233,7 @@ function Penyakit(){
                                                         <td>{list.nama_penyakit}</td>
                                                         <td className='deskripsi'>{list.deskripsi}</td>
                                                         <td>{list.obat}</td>
-                                                        <td>{list.harga_obat}</td>
+                                                        <td>{currencyFormatter.format(list.harga_obat, {code: 'IDR'})}</td>
                                                         {role === 'admin' &&
                                                         <td>
                                                             <div className="d-flex justify-content-center">
@@ -278,7 +278,6 @@ function Penyakit(){
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
     

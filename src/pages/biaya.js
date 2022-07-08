@@ -5,13 +5,13 @@ import Navbar from "../compenents/navbar";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import { confirmAlert } from 'react-confirm-alert';
+import currencyFormatter  from 'currency-formatter';
 
 //import react boostrap
 import {Card} from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
-import {Pagination} from 'react-bootstrap';
 
 //import react-icons
 import * as BsIcons from 'react-icons/bs';
@@ -22,7 +22,6 @@ function Biaya(){
     const [search,setSearch] = useState('');
     const [role,setRole] = useState('');
     const [sort,setSort] = useState('');
-    const [auth,setAuth] = useState([]);
     const [currentPage,setCurrentPage] = useState(parseInt("")|| sessionStorage.getItem('page'));
     const [postsPerPage,setPostsPerPage] = useState(parseInt("")|| sessionStorage.getItem('limit'));
     const history = useHistory();
@@ -195,7 +194,6 @@ function Biaya(){
                         </div>
                         
                         {/* tabel data biaya */}
-                        <div className="d-flex justify-content-center">
                             <div class="table-responsive">
                             <Table class="table align-middle mb-0 bg-white">
                                 <thead class="bg-light">
@@ -222,7 +220,7 @@ function Biaya(){
                                                 <tr key={index}>
                                                     <td>{index+1}</td>
                                                     <td>{item.nama_biaya}</td>
-                                                    <td>{item.harga}</td>
+                                                    <td>{currencyFormatter.format(item.harga,{code: 'IDR'})}</td>
                                                     <td className='deskripsi'>{item.deskripsi}</td>
                                                     {role === 'admin' &&
                                                     <td>
@@ -238,7 +236,6 @@ function Biaya(){
                             </div>
                         </div>
                 </div>
-            </div>
         )
     }
 

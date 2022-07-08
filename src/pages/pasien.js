@@ -6,8 +6,7 @@ import "../App.css";
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import jsPDF from 'jspdf';
-import CurrencyFormat from 'react-currency-format';
-
+import currencyFormatter from 'currency-formatter';
 
 //import react boostrap
 import {Form} from 'react-bootstrap';
@@ -266,7 +265,7 @@ function Pasien(){
                                                     <td>{biaya.nama_biaya}</td>
                                                 )
                                             })}
-                                            <td>{pasien.biaya_perawatan+pasien.biaya_kamar+pasien.biaya_obat}</td>
+                                            <td>{currencyFormatter.format(pasien.biaya_perawatan+pasien.biaya_kamar+pasien.biaya_obat, {code: 'IDR'})}</td>
                                             { role === 'pasien' ?
                                             <td>
                                                 {pasien.penyakit.map((penyakit,index)  => {
